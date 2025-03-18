@@ -9,7 +9,8 @@ import kotlinx.coroutines.launch
 
 class MainViewModel:ViewModel() {
 
-    val categoriesState: State<RecipeState> = _categoryState
+
+    //val categoriesState: State<RecipeState> = _categoryState
 
     init {
         fetchCategories()//call when viewmodel is initialized
@@ -36,19 +37,20 @@ class MainViewModel:ViewModel() {
         }
 
     }
+    data class RecipeState(
+        val loading:Boolean=true,
+        val list:List<Category> = emptyList(),
+        val error:String?=null//means nullable string
 
+    )
+
+    private val _categoryState= mutableStateOf(RecipeState())
+    val categoriesState:State<RecipeState> =_categoryState
 
 }
-private val _categoryState= mutableStateOf(RecipeState())
-val categoriesState:State<RecipeState> =_categoryState
 
 
-data class RecipeState(
-    val loading:Boolean=true,
-    val list:List<Category> = emptyList(),
-    val error:String?=null//means nullable string
 
-)
 
 
 
