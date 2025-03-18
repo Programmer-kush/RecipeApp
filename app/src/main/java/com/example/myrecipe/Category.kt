@@ -13,3 +13,4 @@ data class CategoryResponse(val categories:List<Category>)
 //"strCategory": "Beef",
 //"strCategoryThumb": "https://www.themealdb.com/images/category/beef.png",
 //"strCategoryDescription":
+//kush
