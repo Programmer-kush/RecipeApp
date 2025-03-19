@@ -1,2 +1,1 @@
-This is recipe app
-new
+a good readme
